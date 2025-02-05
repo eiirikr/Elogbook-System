@@ -22,11 +22,18 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Attendance System</h1>
+      <nav>
+        <h1>Attendance System</h1>
+      </nav>
       <Timer />
-      <LoginForm fetchRecords={fetchRecords} />
-      <LogoutForm fetchRecords={fetchRecords} />
+      <div className="forms-container">
+        <LoginForm fetchRecords={fetchRecords} />
+        <LogoutForm fetchRecords={fetchRecords} />
+      </div>
       <AttendanceTable records={records} />
+      <footer>
+        <p>&copy; 2025 Attendance System. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
