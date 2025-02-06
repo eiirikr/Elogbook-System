@@ -1,4 +1,10 @@
 /* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   --primary-color: #3498db;
   --secondary-color: #2ecc71;
@@ -12,23 +18,42 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
-  margin: 0;
-  padding: 20px;
-  height: 100vh;
+  margin-bottom: 100px;
 }
+
 
 /* Navigation Bar */
-nav {
-  background-color: var(--primary-color);
-  padding: 10px 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
+.navbar {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
 
-nav h1 {
-  color: #fff;
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-navbar {
+  background-color: #fff;
+  color: white;
+  box-shadow: var(--box-shadow);
+  height: 100px;
+}
+
+.custom-navbar img {
+  height: 80px;
+  margin-left: 50px;
+  border-radius: 50%;
+}
+
+.nav-text {
+  font-size: 12px;
+  color: var(--primary-color);
   margin: 0;
-  font-size: 1.5rem;
+  width: 200px;
+  word-wrap: break-word;
 }
 
 /* Forms Container */
@@ -44,15 +69,14 @@ nav h1 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: var(--box-shadow);
+  margin-top: 100px;
+  background-color: var(--background-color);
 }
 
 /* Header */
 h1 {
   text-align: center;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   margin-bottom: 20px;
 }
 
@@ -96,6 +120,7 @@ button {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  max-width: 100px;
 }
 
 button:hover {
@@ -114,13 +139,14 @@ table {
 th,
 td {
   padding: 12px;
-  text-align: left;
+  text-align: center;
   border-bottom: 1px solid var(--border-color);
 }
 
 th {
   background-color: var(--primary-color);
   color: #fff;
+  border: 1px solid #fff;
 }
 
 tr:hover {
@@ -130,13 +156,16 @@ tr:hover {
 
 /* Footer */
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   text-align: center;
-  margin-top: 30px;
   padding: 10px;
-  background-color: var(--primary-color);
-  color: #fff;
-  border-radius: 8px;
+  background-color: #fff;
+  color: var(--text-color);
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -157,5 +186,6 @@ footer {
   th,
   td {
     padding: 8px;
+    border: 1px solid #333;
   }
 }

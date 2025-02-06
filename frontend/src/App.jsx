@@ -4,7 +4,8 @@ import LoginForm from "./components/LoginForm";
 import LogoutForm from "./components/LogoutForm";
 import Timer from "./components/Timer";
 import AttendanceTable from "./components/AttendanceTable";
-import "./index.css";
+import AppNavbar from "./components/AppNavbar"
+import Footer from "./components/Footer"
 
 function App() {
   const [records, setRecords] = useState([]);
@@ -21,20 +22,19 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <nav>
-        <h1>Attendance System</h1>
-      </nav>
-      <Timer />
-      <div className="forms-container">
-        <LoginForm fetchRecords={fetchRecords} />
-        <LogoutForm fetchRecords={fetchRecords} />
+    <>
+      <AppNavbar />
+      <div className="App">
+        <h1>Elogbook System</h1>
+        <Timer />
+        <div className="forms-container">
+          <LoginForm fetchRecords={fetchRecords} />
+          <LogoutForm fetchRecords={fetchRecords} />
+        </div>
+        <AttendanceTable records={records} />
+        <Footer />
       </div>
-      <AttendanceTable records={records} />
-      <footer>
-        <p>&copy; 2025 Attendance System. All rights reserved.</p>
-      </footer>
-    </div>
+    </>
   );
 }
 

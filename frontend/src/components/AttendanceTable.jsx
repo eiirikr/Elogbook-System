@@ -1,34 +1,50 @@
 import React from "react";
-import moment from "moment";
 
 const AttendanceTable = ({ records }) => {
   return (
     <table>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Role</th>
-          <th>Login Time</th>
-          <th>Logout Time</th>
+          <th rowspan="2">Name</th>
+          <th rowspan="2">Role</th>
+          <th colspan="2">AM</th>
+          <th colspan="2">PM</th>
+        </tr>
+        <tr>
+          <th>Login</th>
+          <th>Logout</th>
+          <th>Login</th>
+          <th>Logout</th>
         </tr>
       </thead>
       <tbody>
-        {records.map((record) => (
-          <tr key={record._id}>
-            <td>{record.name}</td>
-            <td>{record.role}</td>
-            <td>
-              {moment(record.loginTime).format("hh:mm:ss A, MMMM D, YYYY")}
-            </td>
-            <td>
-              {record.logoutTime
-                ? moment(record.logoutTime).format("hh:mm:ss A, MMMM D, YYYY")
-                : "Active"}
-            </td>
-          </tr>
-        ))}
+        <tr>
+          <td>Jeric Javier</td>
+          <td>Intern</td>
+          <td>08:00</td>
+          <td>12:00</td>
+          <td>01:00</td>
+          <td>05:00</td>
+        </tr>
+        <tr>
+          <td>Immat Ladignon</td>
+          <td>Intern</td>
+          <td>08:00</td>
+          <td>12:00</td>
+          <td>01:00</td>
+          <td>05:00</td>
+        </tr>
+        <tr>
+          <td>Justine</td>
+          <td>Intern</td>
+          <td>08:00</td>
+          <td>12:00</td>
+          <td>01:00</td>
+          <td>05:00</td>
+        </tr>
       </tbody>
     </table>
+
   );
 };
 
