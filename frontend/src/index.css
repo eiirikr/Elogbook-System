@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
 /* General Styles */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 :root {
+  --white-color: #fff;
+  --black-color: #18191a;
+  --red-color: #e74c3c;
+
   --primary-color: #3498db;
   --secondary-color: #2ecc71;
   --background-color: #f4f4f4;
@@ -15,31 +21,175 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  margin-bottom: 100px;
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+  background-size: cover;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: 1400px;
+  margin-bottom: 50px;
+}
+
+.container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  padding: 30px;
+}
+
+.container .clock {
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: var(--white-color);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1), 0 25px 45px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.clock label {
+  position: absolute;
+  inset: 20px;
+  text-align: center;
+  transform: rotate(calc(var(--i) * (360deg / 12)));
+}
+
+.clock label span {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--black-color);
+  transform: rotate(calc(var(--i) * (-360deg / 12)));
+}
+
+.container .indicator {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.indicator::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  z-index: 100;
+  background: var(--black-color);
+  border: 4px solid var(--red-color);
+}
+
+.indicator .hand {
+  position: absolute;
+  height: 100px;
+  width: 4px;
+  bottom: 0;
+  border-radius: 25px;
+  transform-origin: bottom;
+  background: var(--red-color);
+}
+
+.hand.minute {
+  height: 100px;
+  width: 5px;
+  background: var(--black-color);
+}
+
+.hand.hour {
+  height: 70px;
+  width: 8px;
+  background: var(--black-color);
+}
+
+.mode-switch {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: 400;
+  display: inline-block;
+  color: var(--white-color);
+  background: var(--black-color);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.date {
+  text-align: center;
+}
+
+.date > h1 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  letter-spacing: 10px;
+  width: 100%;
+  font-size: 50px;
+  color: var(--white-color);
+}
+
+.month-day {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 95%;
+
+}
+
+.month-day > h2 {
+  background-color: var(--white-color);
+  font-size: 30px;
+  width: 80px;
+  border-radius: 10px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hourMinSec {
+  font-size: 140px;
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
 /* Navigation Bar */
-.navbar {
+/* .navbar {
   display: flex;
   align-items: center;
   flex-direction: row;
+  background-color: #fff;
+  color: white;
+  box-shadow: var(--box-shadow);
+  height: 100px;
 }
 
 .nav {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.custom-navbar {
-  background-color: #fff;
-  color: white;
-  box-shadow: var(--box-shadow);
-  height: 100px;
 }
 
 .custom-navbar img {
@@ -54,7 +204,7 @@ body {
   margin: 0;
   width: 200px;
   word-wrap: break-word;
-}
+} */
 
 /* Forms Container */
 .forms-container {
@@ -66,15 +216,14 @@ body {
 
 /* Container */
 .App {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
   margin-top: 100px;
-  background-color: var(--background-color);
 }
 
 /* Header */
-h1 {
+.App > h1 {
   text-align: center;
   color: var(--secondary-color);
   margin-bottom: 20px;
@@ -189,3 +338,23 @@ footer {
     border: 1px solid #333;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

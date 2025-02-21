@@ -1,14 +1,18 @@
-import { Container } from "react-bootstrap";
-import Navbar from "react-bootstrap/Navbar";
+
+import { Navbar, Container } from "react-bootstrap";
 
 export default function AppNavBar() {
 
   return (
-    <Navbar expand="lg" className="custom-navbar navbar">
-      <Container>
-        <Navbar.Brand className="nav">
-          <img src="src\images\DICT-Logo.jpg" alt="dict-logo" /> 
-          <h1 className="nav-text">Department of Information and Communications Technology</h1>
+    <Navbar className="navbar bg-body-tertiary" bg="light" expand="lg">
+      <Container  className="container-fluid">
+        <Navbar.Brand className="navbar-brand" href="#">
+          <img
+            src="frontend\src\images\DICT-Logo.jpg"
+            alt="Logo"
+            width="30"
+            height="24"
+          />
         </Navbar.Brand>
       </Container>
     </Navbar>
